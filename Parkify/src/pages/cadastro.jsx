@@ -1,20 +1,21 @@
 import { useState } from "react";
-import "./login.css";
-import imageDown from '../assets/images/FooterImage.svg';
-import { Link, useNavigate } from "react-router-dom"; 
+import "./cadastro.css";
+import imageDown from '../assets/images/FooterImage.svg'
 
-export default function LoginPage() {
+export default function Cadastro() {
+
+  const [name, setName] = useState(""); // ADICIONADO
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [apiMessage, setApiMessage] = useState("");
-  const [apiMessageType, setApiMessageType] = useState(""); // <--- ADICIONADO
-
-  const navigate = useNavigate(); 
 
   const validate = () => {
     const newErrors = {};
+
+  
+    if (!name.trim()) newErrors.name = "O nome é obrigatório.";
 
     if (!email.trim()) newErrors.email = "O email é obrigatório.";
     else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))
@@ -40,7 +41,11 @@ export default function LoginPage() {
       const response = await fetch("https://suaapi.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ 
+          name, 
+          email, 
+          password 
+        })
       });
 
       const result = await response.json();
@@ -48,31 +53,38 @@ export default function LoginPage() {
       if (!response.ok) throw new Error(result.message || "Erro na API");
 
       setApiMessage("Login realizado com sucesso!");
-      setApiMessageType("success");
-
-      navigate("/vagas");
-
     } catch (err) {
       setApiMessage(err.message);
-      setApiMessageType("error");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="login-container">
+    <div className="cadastro-container">
       <div className="mainTitle">
         <h1>Parkify</h1>
         <h2>Estacionamento 24h</h2>
-
-        <Link to="/cadastro" className="register-link">
-          Não possui cadastro? Cadastre-se
-        </Link>
+        <a href="/cadastro" className="register-link">
+         Já possui cadastro? Fazer login.
+        </a>
       </div>
 
       <div className="login-card">
+
         <form onSubmit={handleSubmit}>
+
+       
+          <label>Nome:</label>
+          <div className="field-group">
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            {errors.name && <span className="error">{errors.name}</span>}
+          </div>
+
           <label>E-mail:</label>
           <div className="field-group">
             <input
@@ -100,11 +112,7 @@ export default function LoginPage() {
 
         <img src={imageDown} alt="" />
 
-        {apiMessage && (
-          <p className={`api-message ${apiMessageType}`}>
-            {apiMessage}
-          </p>
-        )}
+        {apiMessage && <p className="api-message">{apiMessage}</p>}
       </div>
     </div>
   );
