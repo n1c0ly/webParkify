@@ -74,7 +74,7 @@ form input {
   width: 500px;
   background-color: white;
   height: 50px;
-  border: none;
+
   border-radius: 5px;
   margin-bottom: 30px;
   color: #8629B2;
@@ -93,6 +93,7 @@ form button {
   font-size: 18px;
 }
 
+<<<<<<< HEAD
 .api-message {
   margin-top: 20px;
   padding: 12px 18px;
@@ -113,4 +114,11 @@ form button {
   background-color: #ffe0e0;
   color: #b30000;
   border: 1px solid #ff6b6b;
+=======
+validate-error {
+  color: red;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+>>>>>>> 31964f4b78f616e9f5993ca9cf9467d25890977b
 }

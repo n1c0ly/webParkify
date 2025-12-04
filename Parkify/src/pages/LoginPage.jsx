@@ -9,7 +9,7 @@ export default function LoginPage() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [apiMessage, setApiMessage] = useState("");
-  const [apiMessageType, setApiMessageType] = useState(""); // <--- ADICIONADO
+  const [apiMessageType, setApiMessageType] = useState(""); 
 
   const navigate = useNavigate(); 
 
@@ -80,7 +80,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            {errors.email && <span className="error">{errors.email}</span>}
+         
           </div>
 
           <label>Senha:</label>
@@ -90,22 +90,25 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {errors.password && <span className="error">{errors.password}</span>}
+          
           </div>
+<<<<<<< HEAD
 <Link to="/vagas">
           <button type="submit" disabled={loading}>
             {loading ? "Entrando..." : "Entrar"}
+=======
+
+          <button type="submit" disabled={loading} >
+            <Link to="/vagas">
+              {loading ? "Entrando..." : "Entrar"}
+            </Link>
+>>>>>>> 31964f4b78f616e9f5993ca9cf9467d25890977b
           </button>
           </Link>
         </form>
 
         <img src={imageDown} alt="" />
 
-        {apiMessage && (
-          <p className={`api-message ${apiMessageType}`}>
-            {apiMessage}
-          </p>
-        )}
       </div>
     </div>
   );
