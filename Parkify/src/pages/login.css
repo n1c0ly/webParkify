@@ -93,32 +93,15 @@ form button {
   font-size: 18px;
 }
 
-<<<<<<< HEAD
-.api-message {
-  margin-top: 20px;
-  padding: 12px 18px;
-  width: 450px;
-  text-align: center;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.api-message.success {
-  background-color: #d8ffe3;
-  color: #0c7a2c;
-  border: 1px solid #4cc46b;
-}
-
-.api-message.error {
-  background-color: #ffe0e0;
-  color: #b30000;
-  border: 1px solid #ff6b6b;
-=======
-validate-error {
-  color: red;
+.error,
+.api-error {
+  width: 500px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 15px;
   font-size: 14px;
-  margin-top: -20px;
-  margin-bottom: 20px;
->>>>>>> 31964f4b78f616e9f5993ca9cf9467d25890977b
+  font-weight: 600;
+  color: #0033A0;
+  padding-left: 2px;
 }
