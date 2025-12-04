@@ -92,17 +92,17 @@ export default function LoginPage() {
             />
           
           </div>
-<<<<<<< HEAD
+
 <Link to="/vagas">
           <button type="submit" disabled={loading}>
             {loading ? "Entrando..." : "Entrar"}
-=======
+
 
           <button type="submit" disabled={loading} >
             <Link to="/vagas">
               {loading ? "Entrando..." : "Entrar"}
             </Link>
->>>>>>> 31964f4b78f616e9f5993ca9cf9467d25890977b
+
           </button>
           </Link>
         </form>
