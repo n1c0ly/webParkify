@@ -96,13 +96,6 @@ export default function LoginPage() {
 <Link to="/vagas">
           <button type="submit" disabled={loading}>
             {loading ? "Entrando..." : "Entrar"}
-
-
-          <button type="submit" disabled={loading} >
-            <Link to="/vagas">
-              {loading ? "Entrando..." : "Entrar"}
-            </Link>
-
           </button>
           </Link>
         </form>
