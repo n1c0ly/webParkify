@@ -92,10 +92,11 @@ export default function LoginPage() {
             />
             {errors.password && <span className="error">{errors.password}</span>}
           </div>
-
+<Link to="/vagas">
           <button type="submit" disabled={loading}>
             {loading ? "Entrando..." : "Entrar"}
           </button>
+          </Link>
         </form>
 
         <img src={imageDown} alt="" />

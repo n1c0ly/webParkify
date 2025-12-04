@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./cadastro.css";
-import imageDown from '../assets/images/FooterImage.svg'
+import imageDown from '../assets/images/FooterImage.svg';
 
 export default function Cadastro() {
 
-  const [name, setName] = useState(""); // ADICIONADO
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -14,7 +15,6 @@ export default function Cadastro() {
   const validate = () => {
     const newErrors = {};
 
-  
     if (!name.trim()) newErrors.name = "O nome é obrigatório.";
 
     if (!email.trim()) newErrors.email = "O email é obrigatório.";
@@ -41,10 +41,10 @@ export default function Cadastro() {
       const response = await fetch("https://suaapi.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          name, 
-          email, 
-          password 
+        body: JSON.stringify({
+          name,
+          email,
+          password
         })
       });
 
@@ -65,16 +65,15 @@ export default function Cadastro() {
       <div className="mainTitle">
         <h1>Parkify</h1>
         <h2>Estacionamento 24h</h2>
-        <a href="/cadastro" className="register-link">
-         Já possui cadastro? Fazer login.
-        </a>
+
+        <Link to="/login" className="register-link">
+          Já possui cadastro? Fazer login.
+        </Link>
       </div>
 
       <div className="login-card">
-
         <form onSubmit={handleSubmit}>
 
-       
           <label>Nome:</label>
           <div className="field-group">
             <input
@@ -102,17 +101,22 @@ export default function Cadastro() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {errors.password && <span className="error">{errors.password}</span>}
+            {errors.password && (
+              <span className="error">{errors.password}</span>
+            )}
           </div>
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Entrando..." : "Entrar"}
-          </button>
+          {apiMessage && (
+            <span className="api-error">{apiMessage}</span>
+          )}
+          <Link to="/login">
+            <button type="submit" disabled={loading}>
+              {loading ? "Entrando..." : "Cadastrar"}
+            </button>
+          </Link>
         </form>
 
         <img src={imageDown} alt="" />
-
-        {apiMessage && <p className="api-message">{apiMessage}</p>}
       </div>
     </div>
   );

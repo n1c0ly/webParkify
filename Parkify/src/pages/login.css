@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0;
   box-sizing: border-box;
 }
@@ -20,7 +20,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.mainTitle{
+.mainTitle {
   margin-top: -150px;
 }
 
@@ -32,7 +32,7 @@
   justify-content: center;
 }
 
-.mainTitle h1{
+.mainTitle h1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@
   text-shadow: 0px 0px 30px #AF26DD;
 }
 
-.mainTitle h2{
+.mainTitle h2 {
   font-family: 'Frankfurter Highlight Std';
   font-weight: 400;
   font-size: 22px;
@@ -58,19 +58,19 @@
   flex-direction: column;
 }
 
-form{
+form {
   display: flex;
   align-items: start;
   justify-content: center;
   flex-direction: column;
 }
 
-form label{
-  color:#8629B2;
-  font-weight:700;
+form label {
+  color: #8629B2;
+  font-weight: 700;
 }
 
-form input{
+form input {
   width: 500px;
   background-color: white;
   height: 50px;
@@ -82,7 +82,7 @@ form input{
   font-size: 15px;
 }
 
-form button{
+form button {
   width: 500px;
   height: 60px;
   background: #D979FF;

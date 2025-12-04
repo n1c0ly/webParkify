@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0;
   box-sizing: border-box;
 }
@@ -20,7 +20,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.mainTitle{
+.mainTitle {
   margin-top: -150px;
 }
 
@@ -32,7 +32,7 @@
   justify-content: center;
 }
 
-.mainTitle h1{
+.mainTitle h1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +43,7 @@
   text-shadow: 0px 0px 30px #AF26DD;
 }
 
-.mainTitle h2{
+.mainTitle h2 {
   font-family: 'Frankfurter Highlight Std';
   font-weight: 400;
   font-size: 22px;
@@ -58,31 +58,49 @@
   flex-direction: column;
 }
 
-form{
+
+form {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 
-form label{
-  color:#8629B2;
-  font-weight:700;
+form label {
+  color: #8629B2;
+  font-weight: 700;
 }
 
-form input{
+form input {
   width: 500px;
   background-color: white;
   height: 50px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   color: #8629B2;
   padding-left: 20px;
   font-size: 15px;
 }
 
-form button{
+
+.error,
+.api-error {
+  width: 500px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0033A0;
+  /* azul bic */
+  padding-left: 2px;
+}
+
+
+form button {
   width: 500px;
   height: 60px;
   background: #D979FF;
@@ -92,4 +110,3 @@ form button{
   letter-spacing: 5px;
   font-size: 18px;
 }
-
